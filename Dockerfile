@@ -35,6 +35,8 @@ RUN cd $BUILDROOT && \
 RUN mkdir -p /witness_node_data_dir &&\
     touch /witness_node_data_dir/.default_dir
 
+ADD node.config.ini /witness_node_data_dir/config.ini
+
 
 ENV STEEMD_EXEC="/usr/local/bin/steemd"
 ENV STEEMD_ARGS="--p2p-endpoint=0.0.0.0:2001 --rpc-endpoint=0.0.0.0:8090 --replay-blockchain"
