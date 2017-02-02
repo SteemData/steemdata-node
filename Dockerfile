@@ -21,11 +21,10 @@ RUN cd $BUILDROOT && \
             git checkout $STEEM_RELEASE &&\
             git submodule update --init --recursive &&\
             cmake \
-                -j 8 \
                 -DCMAKE_BUILD_TYPE=Release \
                 -DCMAKE_INSTALL_PREFIX=/usr/local \
                 CMakeLists.txt &&\
-            make install \
+            make -j 8 install \
         ) \
     ) &&\
     ( \
