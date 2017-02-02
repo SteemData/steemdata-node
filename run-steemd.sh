@@ -5,8 +5,14 @@ if [[ -f /witness_node_data_dir/.default_dir ]]; then
 fi
 
 if [[ ! -f /witness_node_data_dir/config.ini ]]; then
+    echo "WARN: Missing steemd config."
+fi
+
+if [[ ! -d /witness_node_data_dir/blockchain ]]; then
     cp $FILESROOT/config.ini.sample /witness_node_data_dir/config.ini
-    echo "INFO: Sample config file is copied to your data dir."
+    echo "Downloading the blockchain..."
+    mkdir -p /witness_node_data_dir/blockchain
+    wget -O "/witness_node_data_dir/blockchain/block_log"  https://gtg.steem.house/get/blockchain/block_log
 fi
 
 ${STEEMD_EXEC} ${STEEMD_ARGS} $*

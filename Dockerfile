@@ -37,7 +37,7 @@ RUN mkdir -p /witness_node_data_dir &&\
 
 
 ENV STEEMD_EXEC="/usr/local/bin/steemd"
-ENV STEEMD_ARGS="--p2p-endpoint=0.0.0.0:2001 --rpc-endpoint=0.0.0.0:8090 --resync-blockchain"
+ENV STEEMD_ARGS="--p2p-endpoint=0.0.0.0:2001 --rpc-endpoint=0.0.0.0:8090 --replay-blockchain"
 
 ADD run-steemd.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/run-steemd.sh
