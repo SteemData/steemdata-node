@@ -18,7 +18,7 @@ RUN cd $BUILDROOT && \
         git clone https://github.com/steemit/steem.git steem &&\
         cd steem ;\
         ( \
-            git checkout develop &&\
+            git checkout $STEEM_RELEASE &&\
             git submodule update --init --recursive &&\
             cmake \
                 -j 8 \
