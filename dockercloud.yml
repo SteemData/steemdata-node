@@ -1,8 +1,8 @@
 steemd:
   image: 'furion/steem:latest'
   ports:
-    - '8090:8090'
     - '2001:2001'
+    - '8090:8090'
   privileged: true
   restart: always
   tags:
